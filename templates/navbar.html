@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="{% url 'parent_dashboard' %}">
+            <i class="fa-solid fa-shield-halved me-2"></i>Smart<span>VaxCare</span>
+        </a>
+
+        <button class="navbar-toggler rounded-pill border-0" type="button" data-bs-toggle="collapse" data-bs-target="#svcNavbarDropdown" aria-controls="svcNavbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="svcNavbarDropdown">
+            <ul class="navbar-nav ms-auto align-items-center gap-2">
+                <li class="nav-item">
+                    <a class="nav-link px-3 active" href="{% url 'parent_dashboard' %}">
+                        <i class="fa fa-home me-1"></i>Home
+                    </a>
+                </li>
+
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-light dropdown-toggle px-3 rounded-pill shadow-sm fw-medium text-primary" type="button" id="userMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-circle-user me-2"></i>{{ request.user.username }}
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow mt-2" aria-labelledby="userMenuButton">
+                            <li>
+                                <a class="dropdown-item py-2" href="{% url 'edit_profile' %}">
+                                    <i class="fa fa-user-gear me-2 text-primary"></i>Edit Profile
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item py-2 text-danger" href="{% url 'logout' %}">
+                                    <i class="fa fa-sign-out-alt me-2"></i>Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="btn btn-light rounded-pill px-4 shadow-sm fw-bold text-primary" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

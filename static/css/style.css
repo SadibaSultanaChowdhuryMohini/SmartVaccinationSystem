@@ -1,0 +1,172 @@
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* 2. Signature Background Gradients */
+body {
+    background: linear-gradient(135deg, #e0e4ec, #99c1f1, #f5fbff);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Alternate light gradient variations used by the team */
+.bg-register {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe, #eff6ff) !important;
+}
+
+.bg-worker {
+    background: linear-gradient(135deg, #edf4ff, #d8e6ff, #f8fbff) !important;
+}
+
+/* 3. Global Navbar Styling Integration */
+.navbar {
+    background: linear-gradient(90deg, #0d6efd, #2563eb) !important;
+    padding: 16px 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: 700;
+    color: white !important;
+}
+
+.navbar-brand span {
+    color: #d1fae5;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: 0.2s opacity ease;
+}
+
+.nav-link:hover {
+    opacity: 0.85;
+}
+
+.dropdown-toggle {
+    border-radius: 30px;
+    padding: 8px 20px;
+}
+
+.dropdown-menu {
+    border: none !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* 4. Unified Card Component Layouts */
+.custom-card, .login-card, .register-card, .card {
+    border: none !important;
+    border-radius: 25px !important;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover, .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* 5. Section Titles & Hero Components */
+.profile-title, .login-title, .register-title {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.hero {
+    background: linear-gradient(120deg, #e8f3ff, #ffffff);
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.hero h1, .hero h2 {
+    font-weight: bold;
+}
+
+/* 6. Form Input Controls Styling */
+form p {
+    margin-bottom: 18px;
+}
+
+form label {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    border-radius: 12px !important;
+    border: 1px solid #ced4da !important;
+    padding: 12px !important;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.25) !important;
+    outline: none;
+}
+
+/* 7. Buttons Design Layout */
+.custom-btn-primary, .update-btn, .login-btn, .register-btn {
+    background: linear-gradient(90deg, #0d6efd, #2563eb) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    transition: transform 0.3s, background 0.3s;
+    width: 100%;
+}
+
+.custom-btn-primary:hover, .update-btn:hover, .login-btn:hover, .register-btn:hover {
+    background: linear-gradient(90deg, #0b5ed7, #1d4ed8) !important;
+    transform: translateY(-2px);
+}
+
+/* 8. Table & Status Component Formatting */
+.table-container {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.badge-status {
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.clinic-buttons {
+    display: flex;
+    gap: 10px;
+}
