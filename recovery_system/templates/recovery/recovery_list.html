@@ -67,32 +67,45 @@
                 {% if recovery.image %}
                 <img src="{{ recovery.image.url }}" class="card-img-top">
                 {% endif %}
-
                 <div class="card-body">
                     <h4>{{ recovery.child_name }}</h4>
                     <p><strong>Reason:</strong> {{ recovery.reason }}</p>
-                    <p><strong>Vaccine:</strong> {{ recovery.vaccine_name }}</p>
                     <p><strong>Date:</strong> {{ recovery.suggested_date }}</p>
-                    {% if recovery.reason == "Forgot" %}
-                        <p class="text-success fw-bold">Reminder every 2 days</p>
+                   {% if recovery.reason == "Forgot" %}
+                        <p class="text-success fw-bold">
+                            {{ recovery.generate_plan }}
+                        </p>
+                        <p>
+                            {{ recovery.get_instruction }}
+                        </p>
                     {% elif recovery.reason == "Sick" %}
-                        <p class="text-danger fw-bold">Recovery plan for child when the body heals</p>
-
+                        <p class="text-danger fw-bold">
+                            {{ recovery.generate_plan }}
+                        </p>
+                        <p>
+                            {{ recovery.get_instruction }}
+                        </p>
                     {% elif recovery.reason == "Travel" %}
-                        <p class="text-warning fw-bold">Visit nearest clinic: Apollo Clinic</p>
-
+                        <p class="text-warning fw-bold">
+                            {{ recovery.generate_plan }}
+                        </p>
+                        <p>
+                            {{ recovery.get_instruction }}
+                        </p>
                     {% elif recovery.reason == "No Slot" %}
-                        <p class="text-warning fw-bold">Alternative clinic: City Hospital</p>
+                        <p class="text-warning fw-bold">
+                            {{ recovery.generate_plan }}
+                        </p>
+                        <p>
+                            {{ recovery.get_instruction }}
+                        </p>
                     {% endif %}
-
                     <a href="{% url 'delete' recovery.id %}" class="btn delete-btn">
                         Delete
                     </a>
-
                     <a href="{% url 'update_recovery' recovery.id %}" class="btn btn-warning">
                         Update
                     </a>
-
                 </div>
             </div>
         </div>
