@@ -4,7 +4,7 @@ from .models import Clinic, Appointment
 @admin.register(Clinic)
 class ClinicAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'location', 'contact_number', '')
+    list_display = ('name', 'location', 'contact_number', 'email')
     search_fields = ('name', 'location')
     list_filter = ('location',)
 
