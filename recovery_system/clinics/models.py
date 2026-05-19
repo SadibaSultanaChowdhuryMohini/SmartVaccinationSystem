@@ -5,8 +5,11 @@ class Clinic(models.Model):
     location = models.CharField(max_length=200)
     contact_number = models.CharField(max_length=15)
     email = models.EmailField(max_length=100)
+    opening_hours = models.CharField(max_length=100)
+    vaccine_price_range = models.CharField(max_length=100)
+    special_notes = models.TextField()
 
-    available_vaccines = models.ManyToManyField('vaccine.Vaccine', related_name='clinics')
+    available_vaccines = models.ManyToManyField('vaccination.Vaccine', related_name='clinics')
 
     def __str__(self):
         return self.name
