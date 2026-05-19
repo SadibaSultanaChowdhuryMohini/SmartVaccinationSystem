@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Active Vaccine Reminders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: #f4f7fc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+<div class="container mt-5" style="max-width: 850px;">
+    <div class="mb-5">
+        <h2 style="color: #478be3;" class="fw-bold m-0">Active Immunization Reminders &#x1F514;</h2>
+        <p class="text-muted m-0 small">Upcoming and pending vaccine alerts requiring clinical attention</p>
+    </div>
+
+    <div class="row">
+        {% for reminder in schedules %}
+        <div class="col-12 mb-3">
+            <div class="card shadow-sm border-0 bg-white p-4" style="border-radius: 16px; border-left: 5px solid #478be3; transition: transform 0.2s;">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+
+                    <div class="d-flex align-items-center gap-3">
+                        <div style="font-size: 2rem;">&#x1F476;</div>
+                        <div>
+                            <h5 class="fw-bold m-0 mb-1 text-dark">{{ reminder.child.child_name }}</h5>
+                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                <span class="badge px-2 py-1 small" style="background-color: #fff3cd; color: #856404; font-weight: 600; border-radius: 8px;">
+                                    &#x26A0;&#xFE0F; ACTION DUE
+                                </span>
+                                <span class="text-muted small">| Formula: <strong class="text-dark">{{ reminder.vaccine_name }}</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-md-end">
+                        <p class="m-0" style="font-size: 0.9rem; color: #6c757d; font-weight: 500;">&#x1F4C5; Target Window</p>
+                        <p class="m-0" style="font-size: 1.05rem; color: #478be3; font-weight: 600;">{{ reminder.scheduled_date|date:"F d, Y" }}</p>
+                    </div>
+
+                    <div>
+                        <a href="{% url 'vaccination_dashboard' %}" class="btn text-white fw-bold btn-sm px-4 py-2" style="background-color: #478be3; border-radius: 10px;">
+                            View Profile
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <div class="card shadow-sm border-0 py-5 px-4 bg-white mx-auto" style="border-radius: 15px; max-width: 500px;">
+                <span class="mb-3" style="font-size: 3rem;">&#x2705;</span>
+                <h5 class="fw-bold mb-2">All Clear! No Pending Reminders</h5>
+                <p class="text-muted small mb-0">Every registered child profile is completely up-to-date with their current scheduling phase.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

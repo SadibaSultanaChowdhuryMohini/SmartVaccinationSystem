@@ -1,7 +1,10 @@
 from django.urls import path
-from . import views
+from vaccination import views
 
 urlpatterns = [
-    # Member 2 will hook up their view functions here
-    # Example: path('history/', views.vaccination_history, name='vaccination_history'),
+
+    path('dashboard/', views.vaccination_dashboard, name='vaccination_dashboard'),
+    path('add-child/', views.add_child, name='add_child'),
+    path('reminders/', views.vaccination_reminders, name='vaccination_reminders'),
+    path('history/', views.vaccination_dashboard, name='vaccination_history'),
 ]

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Child</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: #f4f7fc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 bg-white p-5 mt-4 mx-auto" style="border-radius: 20px !important; max-width: 550px;">
+        <div class="text-center mb-4">
+            <h2 style="color: #478be3;" class="fw-bold m-0">Register New Child &#x1F476;</h2>
+            <p class="text-muted small mt-1">Initialize clinical vaccination scheduling profile</p>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {% for field in form %}
+            <div class="mb-3">
+                <label class="form-label fw-bold text-muted small text-uppercase">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                <div class="text-danger small mt-1">{{ field.errors.0 }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn py-2.5 shadow-sm text-white" style="background-color: #478be3; border-radius: 12px; font-weight: 600; border: none;">
+                    Save Profile & Generate Schedule
+                </button>
+                <a href="{% url 'vaccination_dashboard' %}" class="btn btn-light text-muted py-2.5 fw-bold" style="border-radius: 12px;">
+                    Cancel & Return
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
