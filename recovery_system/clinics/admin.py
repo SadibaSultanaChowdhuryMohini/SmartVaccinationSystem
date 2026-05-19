@@ -1,3 +1,16 @@
 from django.contrib import admin
+from .models import Clinic, Appointment
 
-# Register your models here.
+@admin.register(Clinic)
+class ClinicAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'location', 'contact_number', '')
+    search_fields = ('name', 'location')
+    list_filter = ('location',)
+
+@admin.register(Appointment)
+class AppointmentAdmin(admin.ModelAdmin):
+
+    list_display = ('user_name', 'clinic', 'date', 'time_slot', 'status')
+    search_fields = ('user_name', 'clinic__name')
+    list_filter = ('status', 'date')
