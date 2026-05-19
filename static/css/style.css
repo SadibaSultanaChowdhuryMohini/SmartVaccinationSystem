@@ -1,172 +1,343 @@
-
 * {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
-
-/* 2. Signature Background Gradients */
-body {
-    background: linear-gradient(135deg, #e0e4ec, #99c1f1, #f5fbff);
-    background-attachment: fixed;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Alternate light gradient variations used by the team */
-.bg-register {
-    background: linear-gradient(135deg, #dbeafe, #bfdbfe, #eff6ff) !important;
+body {
+    background: #f5fbff;
+    overflow-x: hidden;
 }
 
-.bg-worker {
-    background: linear-gradient(135deg, #edf4ff, #d8e6ff, #f8fbff) !important;
+html {
+    scroll-behavior: smooth;
 }
 
-/* 3. Global Navbar Styling Integration */
 .navbar {
-    background: linear-gradient(90deg, #0d6efd, #2563eb) !important;
-    padding: 16px 20px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    background: white;
+    padding: 18px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
-
 .navbar-brand {
     font-size: 28px;
     font-weight: 700;
-    color: white !important;
+    color: #0d6efd !important;
 }
-
 .navbar-brand span {
-    color: #d1fae5;
+    color: #20c997;
 }
-
 .nav-link {
-    color: white !important;
+    color: #333 !important;
     font-weight: 500;
-    transition: 0.2s opacity ease;
+    margin-left: 18px;
+    transition: 0.3s;
 }
-
 .nav-link:hover {
-    opacity: 0.85;
+    color: #0d6efd !important;
+}
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #e8f3ff, #f5fbff);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
 }
 
-.dropdown-toggle {
-    border-radius: 30px;
-    padding: 8px 20px;
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #0d6efd15;
+    border-radius: 50%;
+    top: -150px;
+    right: -100px;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #20c99715;
+    border-radius: 50%;
+    bottom: -120px;
+    left: -120px;
 }
 
-.dropdown-menu {
-    border: none !important;
-    border-radius: 15px !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-}
-
-/* 4. Unified Card Component Layouts */
-.custom-card, .login-card, .register-card, .card {
-    border: none !important;
-    border-radius: 25px !important;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.custom-card:hover, .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* 5. Section Titles & Hero Components */
-.profile-title, .login-title, .register-title {
-    text-align: center;
-    font-size: 35px;
+.hero-text h1 {
+    font-size: 58px;
     font-weight: 700;
+    color: #0d1b2a;
+    line-height: 1.2;
+}
+.hero-text h1 span {
     color: #0d6efd;
-    margin-bottom: 25px;
+}
+.hero-text p {
+    margin-top: 25px;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.8;
+}
+.hero-btns {
+    margin-top: 35px;
+}
+.btn-main {
+    background: #0d6efd;
+    color: white;
+    padding: 12px 25px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    z-index: 9999;
+}
+.btn-main:hover {
+    background: #0056d6;
+    color: white;
+}
+.btn-outline-custom {
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn-outline-custom:hover {
+    background: #0d6efd;
+    color: white;
+}
+.hero-image img {
+    width: 100%;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .section-title {
-    margin-top: 35px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title h2 {
+    font-size: 42px;
     font-weight: 700;
-    color: #0d6efd;
+    color: #0d1b2a;
 }
 
-.hero {
-    background: linear-gradient(120deg, #e8f3ff, #ffffff);
-    padding: 40px;
-    border-radius: 20px;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+.section-title p {
+    color: #666;
+    margin-top: 15px;
+}
+.features {
+    padding: 100px 0;
 }
 
-.hero h1, .hero h2 {
-    font-weight: bold;
-}
-
-/* 6. Form Input Controls Styling */
-form p {
-    margin-bottom: 18px;
-}
-
-form label {
-    font-weight: 500;
-    margin-bottom: 6px;
-}
-
-form input,
-form textarea,
-form select {
-    width: 100%;
-    border-radius: 12px !important;
-    border: 1px solid #ced4da !important;
-    padding: 12px !important;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-form input:focus,
-form textarea:focus,
-form select:focus {
-    border-color: #0d6efd !important;
-    box-shadow: 0 0 8px rgba(13, 110, 253, 0.25) !important;
-    outline: none;
-}
-
-/* 7. Buttons Design Layout */
-.custom-btn-primary, .update-btn, .login-btn, .register-btn {
-    background: linear-gradient(90deg, #0d6efd, #2563eb) !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 12px !important;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    color: white !important;
-    transition: transform 0.3s, background 0.3s;
-    width: 100%;
-}
-
-.custom-btn-primary:hover, .update-btn:hover, .login-btn:hover, .register-btn:hover {
-    background: linear-gradient(90deg, #0b5ed7, #1d4ed8) !important;
-    transform: translateY(-2px);
-}
-
-/* 8. Table & Status Component Formatting */
-.table-container {
+.feature-card {
     background: white;
-    padding: 25px;
-    border-radius: 20px;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    transition: 0.4s;
+    height: 100%;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.badge-status {
-    padding: 8px 14px;
-    border-radius: 10px;
-    font-size: 13px;
+.feature-card:hover {
+    transform: translateY(-10px);
 }
 
-.clinic-buttons {
+.feature-icon {
+    width: 90px;
+    height: 90px;
+    background: #eaf3ff;
+    margin: auto;
+    border-radius: 50%;
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.feature-icon i {
+    font-size: 38px;
+    color: #0d6efd;
+}
+
+.feature-card h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Security */
+.security {
+    padding: 100px 0;
+    background: white;
+}
+
+.security-box {
+    background: linear-gradient(135deg, #0d6efd, #20c997);
+    padding: 60px;
+    border-radius: 30px;
+    color: white;
+}
+
+.security-box h2 {
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.security-icons {
+    margin-top: 30px;
+}
+
+.security-icons i {
+    font-size: 50px;
+    margin-right: 30px;
+}
+
+/* Stats */
+.stats {
+    padding: 100px 0;
+}
+
+.stat-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stat-box h2 {
+    color: #0d6efd;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.stat-box p {
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Workflow */
+.workflow {
+    padding: 100px 0;
+    background: white;
+}
+
+.step-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: #0d6efd;
+    color: white;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.step-card h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background: #0d1b2a;
+    color: white;
+    padding: 70px 0 20px;
+}
+
+.footer-title {
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.footer-text {
+    color: #ccc;
+    line-height: 1.9;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    background: #16314f;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #0d6efd;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding-top: 20px;
+    text-align: center;
+    color: #ccc;
+}
+
+/* Overlay */
+.overlay {
+    pointer-events: none;
+}
+
+/* Responsive */
+@media(max-width: 991px) {
+    .hero {
+        text-align: center;
+        padding-top: 140px; /* ছোট স্ক্রিনেও রেশিও ঠিক রাখার জন্য স্পেস বাড়ানো হয়েছে */
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .hero-image {
+        margin-top: 50px;
+    }
+
+    .security-box {
+        padding: 40px;
+    }
 }
