@@ -1,0 +1,35 @@
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow p-4 border-0" style="background: #f8f9fa;">
+        <h2 class="text-center mb-4 text-primary">
+            My Profile
+        </h2>
+        <div class="bg-white p-3 rounded shadow-sm mb-2">
+            <strong class="text-secondary">Name:</strong>
+            <span class="text-dark">{{ request.user.username }}</span>
+        </div>
+        <div class="bg-white p-3 rounded shadow-sm mb-2">
+            <strong class="text-secondary">Email:</strong>
+            <span class="text-dark">{{ request.user.email }}</span>
+        </div>
+        <div class="bg-white p-3 rounded shadow-sm mb-2">
+            <strong class="text-secondary">Phone:</strong>
+            <span class="text-dark">{{ profile.phone }}</span>
+        </div>
+        <div class="bg-white p-3 rounded shadow-sm mb-3">
+            <strong class="text-secondary">Address:</strong>
+            <span class="text-dark">{{ profile.address }}</span>
+        </div>
+
+        <div class="text-center">
+            <a href="{% url 'edit_profile' %}" class="btn btn-primary px-4">
+                Edit Profile
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
