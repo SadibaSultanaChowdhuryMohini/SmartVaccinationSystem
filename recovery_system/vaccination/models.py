@@ -42,6 +42,7 @@ class Child(models.Model):
 
 
 class VaccinationSchedule(models.Model):
+    VERIFICATION_CHOICES = [('PENDING', 'Pending'), ('VERIFIED', 'Verified')]
     child = models.ForeignKey(Child, on_delete=models.CASCADE)
     vaccine_name = models.CharField(max_length=200)
     scheduled_date = models.DateField()
