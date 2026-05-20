@@ -5,8 +5,15 @@ import sys
 
 
 def main():
-    """Run administrative tasks."""
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'recovery_system.settings')
+
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    apps_dir = os.path.join(current_dir, 'recovery_system')
+    if apps_dir not in sys.path:
+        sys.path.insert(0, apps_dir)
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

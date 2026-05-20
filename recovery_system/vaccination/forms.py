@@ -1,10 +1,11 @@
+
 from django import forms
 from .models import Child
 from clinics.models import Clinic
 
 class ChildRegistrationForm(forms.ModelForm):
 
-    assigned_clinic = forms.ModelFormChoiceField(
+    assigned_clinic = forms.ModelChoiceField(
         queryset=Clinic.objects.all(),
         empty_label="Select an Assigned Clinic",
         widget=forms.Select(attrs={'class': 'form-select', 'style': 'border-radius: 10px;'})
