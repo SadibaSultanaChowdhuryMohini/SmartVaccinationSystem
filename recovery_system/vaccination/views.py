@@ -25,6 +25,7 @@ def vaccination_dashboard(request):
         'children': children,
         'schedules': upcoming_schedules,
         'history': vaccination_history
+        'status_checked': True,
     })
 
 
